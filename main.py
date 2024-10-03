@@ -30,6 +30,12 @@ class Calculator:
         self.history.append(op)
         return op
 
+    def percent(self, a, b):
+        result = (a / b) * 100
+        op = f"The percentage of {b} out of {a} is {result:.2f}%."
+        self.history.append(op)
+        return op
+
     # Sin,Cos,Tan
     def sin(self, a):
         result = math.sin(a)
@@ -50,7 +56,7 @@ class Calculator:
         return op
 
     # Power,SqRoot
-    def root(self, a, b):
+    def power(self, a, b):
         # result = a**b
         result = math.pow(a, b)
         op = f"{a} root {b} = {result} "
@@ -76,6 +82,24 @@ class Calculator:
         self.history.append(op)
         return op
 
+    def pi(self, a):
+        result = math.pi * a
+        op = f"Pi Value of {a}  = {result} "
+        self.history.append(op)
+        return op
+
+    def inv(self, a):
+        result = 1 / a
+        op = f"Inverse of {a}  = {result} "
+        self.history.append(op)
+        return op
+
+    def e(self, a):
+        result = math.e * a
+        op = f"Euler's number of {a}  = {result} "
+        self.history.append(op)
+        return op
+
 
 calc = Calculator()
 # print(calc.add(20, 10))
@@ -89,21 +113,27 @@ print("\nThis Is Basic Calculator ")
 print("Which Opration Do you want to Perform ? Choose From Below Option :")
 print(
     """
-Press 1 For Addition
-Press 2 For Subtraction
-Press 3 For Multiplication
-Press 4 For Division
+Please select an operation by pressing the corresponding number:
 
-Press 5 For Power
-Press 6 For Squre Root
+1. Addition (+)
+2. Subtraction (−)
+3. Multiplication (×)
+4. Division (÷)
 
-Press 7 For Sin
-Press 8 For Cos
-Press 9 For Tan
+5. Power (^)
+6. Square Root (√)
 
-Press 10 For Natural Log
-Press 11 For Common Log
+7. Sine (sin)
+8. Cosine (cos)
+9. Tangent (tan)
 
+10. Natural Logarithm (ln)
+11. Common Logarithm (log)
+
+12. Pi (π)
+13. Percentage (%)
+14. Inverse (1/x)
+15. Euler's number
       """
 )
 
@@ -111,54 +141,80 @@ Choice = int(input("What is You Choise : "))
 
 if Choice <= 5:
 
-    num1 = int(input("Enter Frist Number : "))
-    num2 = int(input("Enter Second Number : "))
+    num1 = float(input("Enter First Number : "))
+    num2 = float(input("Enter Second Number : "))
+
+
+elif Choice == 13:
+    num1 = float(input("Enter the whole (the total amount): "))
+    num2 = float(
+        input("Enter the part (the amount you want to find the percentage of): ")
+    )
 else:
-    num1 = int(input("Enter Frist Number : "))
+    num1 = float(input("Enter Frist Number : "))
 
-if Choice == 1:
-    result = calc.add(num1, num2)
-    print(result)
-
-elif Choice == 2:
-    result = calc.sub(num1, num2)
-    print(result)
-
-elif Choice == 3:
-    result = calc.multi(num1, num2)
-    print(result)
-
-elif Choice == 4:
-    result = calc.divide(num1, num2)
-    print(result)
-
-elif Choice == 5:
-    result = calc.root(num1, num2)
-    print(result)
-
-elif Choice == 6:
-    result = calc.sq_root(num1)
-    print(result)
-
-elif Choice == 7:
-    result = calc.sin(num1)
-    print(result)
-
-elif Choice == 8:
-    result = calc.cos(num1)
-    print(result)
-
-elif Choice == 9:
-    result = calc.tan(num1)
-    print(result)
-
-elif Choice == 10:
-    result = calc.nt_log(num1)
-    print(result)
-
-elif Choice == 11:
-    result = calc.cm_log(num1)
-    print(result)
-
+if num1 == 0 or num2 == 0:
+    print("0 Is not valid")
 else:
-    print("Invalid Choice")
+    if Choice == 1:
+        result = calc.add(num1, num2)
+        print(result)
+
+    elif Choice == 2:
+        result = calc.sub(num1, num2)
+        print(result)
+
+    elif Choice == 3:
+        result = calc.multi(num1, num2)
+        print(result)
+
+    elif Choice == 4:
+        result = calc.divide(num1, num2)
+        print(result)
+
+    elif Choice == 5:
+        result = calc.power(num1, num2)
+        print(result)
+
+    elif Choice == 6:
+        result = calc.sq_root(num1)
+        print(result)
+
+    elif Choice == 7:
+        result = calc.sin(num1)
+        print(result)
+
+    elif Choice == 8:
+        result = calc.cos(num1)
+        print(result)
+
+    elif Choice == 9:
+        result = calc.tan(num1)
+        print(result)
+
+    elif Choice == 10:
+        result = calc.nt_log(num1)
+        print(result)
+
+    elif Choice == 11:
+        result = calc.cm_log(num1)
+        print(result)
+
+    elif Choice == 12:
+        result = calc.pi(num1)
+        print(result)
+
+    elif Choice == 13:
+        result = calc.percent(num1, num2)
+        print(result)
+
+    elif Choice == 14:
+        result = calc.inv(num1)
+        print(result)
+
+    elif Choice == 15:
+        result = calc.e(num1)
+        print(result)
+
+    else:
+        print("Invalid Choice")
