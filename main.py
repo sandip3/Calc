@@ -154,6 +154,7 @@ if Choice in [1, 2, 3, 4, 5]:
 
     num1 = float(input("Enter First Number : "))
     num2 = float(input("Enter Second Number : "))
+    print("")
 
     if Choice == 1:
         result = calc.add(num1, num2)
@@ -177,6 +178,7 @@ if Choice in [1, 2, 3, 4, 5]:
 
 elif Choice in [6, 7, 8, 9, 10, 11, 12]:
     num1 = float(input("Enter  Number : "))
+    print("")
 
     if Choice == 6:
         result = calc.sq_root(num1)
@@ -220,6 +222,7 @@ elif Choice == 13:
     num2 = float(
         input("Enter the part (the amount you want to find the percentage of): ")
     )
+    print("")
     if Choice == 13:
         result = calc.percent(num1, num2)
         print(result)

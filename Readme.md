@@ -1,12 +1,11 @@
 # Basic Calculator
 
 ## Overview
-- A simple Python application for basic arithmetic operations.
-- Built using Object-Oriented Programming (OOP) principles.
+A simple Python application designed for a variety of arithmetic operations, built using Object-Oriented Programming (OOP) principles.
 
 ## Technologies Used
-- **Python**: Programming language used for development.
-- **OOP**: Design approach for modular and reusable code.
+- **Python**: The programming language used for development.
+- **OOP**: A design approach that promotes modular and reusable code.
 
 ## Features
 
@@ -14,10 +13,10 @@
 - **Addition**: Add two or more numbers.
 - **Subtraction**: Subtract one number from another.
 - **Multiplication**: Multiply two or more numbers.
-- **Division**: Divide one number by another (handles division by zero).
+- **Division**: Divide one number by another (includes handling of division by zero).
 
 ### Advanced Operations (Single Input)
-- **Exponentiation**: Raise a number to a power.
+- **Exponentiation**: Raise a number to a specified power.
 - **Square Root**: Calculate the square root of a number.
 
 ### Trigonometric Functions (Single Input)
@@ -29,6 +28,12 @@
 - **Natural Log (ln)**: Calculate the natural logarithm of a number.
 - **Common Log (log10)**: Calculate the common logarithm (base 10) of a number.
 
+### Additional Functions
+- **Pi (π)**: Get the value of π multiplied by a number.
+- **Percentage (%)**: Calculate the percentage of a part relative to a total.
+- **Inverse (1/x)**: Compute the reciprocal of a number.
+- **Euler's Number (e)**: Get Euler's number multiplied by a number.
+
 ## Installation
 
 1. Clone the repository:
@@ -39,40 +44,47 @@
    ```bash
    cd Calc
    ```
-3. Ensure Python is installed (Python 3.x recommended).
+3. Ensure that Python is installed (Python 3.x recommended).
 4. Run the calculator:
    ```bash
    python main.py
    ```
 
 ## Usage
-- Follow the on-screen prompts to select an operation and input numbers.
+Follow the on-screen prompts to select an operation and input the required numbers.
 
-### Example
+### Example Interaction
 ```plaintext
 This Is Basic Calculator 
 Which Operation Do you want to Perform? Choose From Below Options:
 
-Press 1 For Addition
-Press 2 For Subtraction
-Press 3 For Multiplication
-Press 4 For Division
+Please select an operation by pressing the corresponding number:
 
-Press 5 For Exponentiation
-Press 6 For Square Root
+1. Addition (+)
+2. Subtraction (−)
+3. Multiplication (×)
+4. Division (÷)
 
-Press 7 For Sin
-Press 8 For Cos
-Press 9 For Tan
+5. Power (^)
+6. Square Root (√)
 
-Press 10 For Natural Log
-Press 11 For Common Log
+7. Sine (sin)
+8. Cosine (cos)
+9. Tangent (tan)
 
-What is Your Choice: 7
-Enter First Number: 5
-5 sin = -0.9589242746631385 
+10. Natural Logarithm (ln)
+11. Common Logarithm (log)
+
+12. Pi (π)
+13. Percentage (%)
+14. Inverse (1/x)
+15. Euler's number (e)
+
+What is Your Choice: 12
+Enter Number: 15
+
+Pi Value of 15.0 = 47.12388980384689
 ```
 
 ## Conclusion
-- An easy-to-use calculator for essential math operations.
-- Ideal for students and professionals alike. Enjoy calculating!
+This calculator provides an easy-to-use interface for essential mathematical operations, making it ideal for both students and professionals. Enjoy calculating!
