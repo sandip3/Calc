@@ -25,14 +25,19 @@ class Calculator:
         return op
 
     def divide(self, a, b):
+        if a == 0 or b == 0:
+            return "Error : Cannot divide by Zero. "
         result = a / b
         op = f"{a} / {b} = {result}"
         self.history.append(op)
         return op
 
-    def percent(self, a, b):
-        result = (a / b) * 100
-        op = f"The percentage of {b} out of {a} is {result:.2f}%."
+    def percent(self, part, total):
+        if total == 0:
+            return "Error : Cannot calculate percentage with Zero as the whole. "
+
+        result = (part / total) * 100
+        op = f"The percentage of {part} out of {total} is {result:.2f}%."
         self.history.append(op)
         return op
 
@@ -59,18 +64,21 @@ class Calculator:
     def power(self, a, b):
         # result = a**b
         result = math.pow(a, b)
-        op = f"{a} root {b} = {result} "
+        op = f"{a} raised to the power of {b} = {result} "
         self.history.append(op)
         return op
 
     def sq_root(self, a):
         result = math.sqrt(a)
-        op = f"Squre Root of {a} = {result} "
+        op = f"Square Root of {a} = {result} "
         self.history.append(op)
         return op
 
     # Natural , Common Log
     def nt_log(self, a):
+        if a < 0:
+            return "Error: Cannot calculate square root of a negative number."
+
         result = math.log(a)
         op = f"Natural log{a} = {result} "
         self.history.append(op)
@@ -89,6 +97,9 @@ class Calculator:
         return op
 
     def inv(self, a):
+        if a < 0:
+            return "Error: Cannot calculate square root of a negative number."
+
         result = 1 / a
         op = f"Inverse of {a}  = {result} "
         self.history.append(op)
@@ -110,7 +121,7 @@ calc = Calculator()
 # print(calc.history)
 
 print("\nThis Is Basic Calculator ")
-print("Which Opration Do you want to Perform ? Choose From Below Option :")
+print("Which Operation Do you want to Perform ? Choose From Below Option :")
 print(
     """
 Please select an operation by pressing the corresponding number:
@@ -133,29 +144,17 @@ Please select an operation by pressing the corresponding number:
 12. Pi (π)
 13. Percentage (%)
 14. Inverse (1/x)
-15. Euler's number
+15. Euler's number (e)
       """
 )
 
-Choice = int(input("What is You Choise : "))
+Choice = int(input("What is You Choice : "))
 
-if Choice <= 5:
+if Choice in [1, 2, 3, 4, 5]:
 
     num1 = float(input("Enter First Number : "))
     num2 = float(input("Enter Second Number : "))
 
-
-elif Choice == 13:
-    num1 = float(input("Enter the whole (the total amount): "))
-    num2 = float(
-        input("Enter the part (the amount you want to find the percentage of): ")
-    )
-else:
-    num1 = float(input("Enter Frist Number : "))
-
-if num1 == 0 or num2 == 0:
-    print("0 Is not valid")
-else:
     if Choice == 1:
         result = calc.add(num1, num2)
         print(result)
@@ -176,7 +175,10 @@ else:
         result = calc.power(num1, num2)
         print(result)
 
-    elif Choice == 6:
+elif Choice in [6, 7, 8, 9, 10, 11, 12]:
+    num1 = float(input("Enter  Number : "))
+
+    if Choice == 6:
         result = calc.sq_root(num1)
         print(result)
 
@@ -204,10 +206,6 @@ else:
         result = calc.pi(num1)
         print(result)
 
-    elif Choice == 13:
-        result = calc.percent(num1, num2)
-        print(result)
-
     elif Choice == 14:
         result = calc.inv(num1)
         print(result)
@@ -216,5 +214,15 @@ else:
         result = calc.e(num1)
         print(result)
 
-    else:
-        print("Invalid Choice")
+
+elif Choice == 13:
+    num1 = float(input("Enter the whole (the total amount): "))
+    num2 = float(
+        input("Enter the part (the amount you want to find the percentage of): ")
+    )
+    if Choice == 13:
+        result = calc.percent(num1, num2)
+        print(result)
+
+else:
+    print("Invalid Choice")
